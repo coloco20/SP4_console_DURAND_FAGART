@@ -16,11 +16,14 @@ public class SP4_console_DURAND_FAGART {
     public static void main(String[] args) {
         Jeton jeton_jaune=new Jeton("jaune");//Création d'un jeton pour vérifier le code
         System.out.println(jeton_jaune.lireCouleur());
-        System.out.println(jeton_jaune.toString());
+        System.out.println(jeton_jaune.toString());//verification du fonctionnement des méthodes
         CelluledeGrille cellule1=new CelluledeGrille(jeton_jaune);//Création d'une cellule pour vérifier le code
         System.out.println(cellule1.presenceJeton());
-        System.out.println(cellule1.lireCouleurDuJeton());
-        // TODO code application logic here
+        System.out.println(cellule1.lireCouleurDuJeton());//verification du fonctionnement des méthodes
+        System.out.println(cellule1.recupererJeton());
+        System.out.println(cellule1.presenceJeton());
+// TODO code application logic here
+        
     }
     
 }
