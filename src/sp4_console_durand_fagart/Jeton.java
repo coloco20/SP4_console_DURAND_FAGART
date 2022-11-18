@@ -9,16 +9,17 @@ package sp4_console_durand_fagart;
  * @author 33768
  */
 public class Jeton {
-    private String couleur_jeton;
-   public Jeton( String couleur) {
-       couleur_jeton=couleur;
+    private String couleur;
+   public Jeton( String couleur_jeton) {
+       couleur=couleur_jeton;
     
 } 
    public String lireCouleur(){
-       return(couleur_jeton);
+       return(couleur);
    } 
+   @Override
    public String toString(){
-       if(couleur_jeton=="rouge"){
+       if(couleur=="rouge"){
        return("R");}
        else{
        return("J");}
