@@ -19,7 +19,7 @@ public class Jeton {
    } 
    @Override
    public String toString(){
-       if(couleur=="rouge"){
+       if("rouge".equals(couleur)){
        return("R");}
        else{
        return("J");}
