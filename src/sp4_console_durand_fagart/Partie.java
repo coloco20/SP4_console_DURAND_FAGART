@@ -9,5 +9,7 @@ package sp4_console_durand_fagart;
  * @author 33768
  */
 public class Partie {
+    public Partie() {
     
+}
 }

@@ -9,7 +9,18 @@ package sp4_console_durand_fagart;
  * @author 33768
  */
 public class Jeton {
-   public Jeton(String couleur) {
+    private String couleur_jeton;
+   public Jeton( String couleur) {
+       couleur_jeton=couleur;
     
 } 
+   public String lireCouleur(){
+       return(couleur_jeton);
+   } 
+   public String toString(){
+       if(couleur_jeton=="rouge"){
+       return("R");}
+       else{
+       return("J");}
+   }
 }

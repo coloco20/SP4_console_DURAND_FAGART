@@ -9,5 +9,11 @@ package sp4_console_durand_fagart;
  * @author 33768
  */
 public class PlateauDeJeu {
+    public PlateauDeJeu() {
+        for(int i = 0;i<7; i++) {
+      for(int j = 0;j<8; j++) {
+      }}
     
+}
+
 }

@@ -14,6 +14,9 @@ public class SP4_console_DURAND_FAGART {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        Jeton jeton_jaune=new Jeton("jaune");//Création d'un jeton pour vérifier le code
+        System.out.println(jeton_jaune.lireCouleur());
+        System.out.println(jeton_jaune.toString());
         // TODO code application logic here
     }
     
