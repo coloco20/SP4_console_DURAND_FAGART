@@ -22,6 +22,7 @@ public class SP4_console_DURAND_FAGART {
         System.out.println(cellule1.lireCouleurDuJeton());//verification du fonctionnement des méthodes
         System.out.println(cellule1.recupererJeton());
         System.out.println(cellule1.presenceJeton());
+        System.out.println(cellule1.presenceJeton());
 // TODO code application logic here
         
     }
