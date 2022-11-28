@@ -8,21 +8,25 @@ package sp4_console_durand_fagart;
  *
  * @author 33768
  */
-
 public class Jeton {//*jc*//
+
     private String couleur;
-   public Jeton( String couleur_jeton) {
-       couleur=couleur_jeton;
-    
-} 
-   public String lireCouleur(){
-       return(couleur);
-   } 
-   @Override
-   public String toString(){
-       if("rouge".equals(couleur)){
-       return("R");}
-       else{
-       return("J");}
-   }
+
+    public Jeton(String couleur_jeton) {
+        couleur = couleur_jeton;
+
+    }
+
+    public String lireCouleur() {
+        return (couleur);
+    }
+
+    @Override
+    public String toString() {
+        if ("rouge".equals(couleur)) {
+            return ("R");
+        } else {
+            return ("J");
+        }
+    }
 }
