@@ -23,6 +23,7 @@ public class CelluleDeGrille {
         else{
         return(true);}
     }
+   
     public String lireCouleurDuJeton(){
     if (presenceJeton()==true){
         if("jaune".equals(jetonCourant.lireCouleur())){

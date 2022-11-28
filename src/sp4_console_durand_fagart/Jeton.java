@@ -8,7 +8,8 @@ package sp4_console_durand_fagart;
  *
  * @author 33768
  */
-public class Jeton {
+
+public class Jeton {//*jc*//
     private String couleur;
    public Jeton( String couleur_jeton) {
        couleur=couleur_jeton;
