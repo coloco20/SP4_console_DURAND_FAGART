@@ -4,35 +4,93 @@
  */
 package sp4_console_durand_fagart;
 
-
 /**
  *
  * @author 33768
  */
-public class CelluledeGrille {
+public class CelluleDeGrille {
+
     private Jeton jetonCourant;
-    public CelluledeGrille(Jeton jeton_courant) {
-        jetonCourant=jeton_courant;  
-}
-    public void CelluleDeGrille (){
-    jetonCourant=null;
-    int a; 
-   
+    private boolean avoirTrouNoir;
+    private boolean avoirDesintegrateur;
+
+    public CelluleDeGrille(Jeton jeton_courant) {
+        jetonCourant = jeton_courant;
     }
-    public boolean presenceJeton(){
-        if(jetonCourant==null){
-        return(false);}
-        else{
-        return(true);}
+
+    public void CelluleDeGrille() {
+        jetonCourant = null;
     }
-    public String lireCouleurDuJeton(){
-    if (presenceJeton()==true){
-        if(jetonCourant.lireCouleur()=="jaune"){
-        return("jaune");}
-        else{return("rouge");}
+
+    public boolean presenceJeton() {
+        if (jetonCourant == null) {
+            return (false);
+        } else {
+            return (true);
+        }
+    }
+
+    public String lireCouleurDuJeton() {
+        if (presenceJeton() == true) {
+            if (jetonCourant.lireCouleur() == "jaune") {
+                return ("jaune");
+            } else {
+                return ("rouge");
+            }
+
+        } else {
+            return ("vide");
+        }
+    }
+    
+    public void affecterJeton(Jeton j){
+        jetonCourant = j;
+    }
+    
+    public void placeTrouNoir(){
+        avoirTrouNoir = true;
+    }
+    
+    public void supprimerTrouNoir(){
+        avoirTrouNoir = false;
+    }
+    
+    public boolean presenceTrouNoir(){
+        if(avoirTrouNoir){
+            return(true);
+        }else{
+            return(false);
+        }
+    }
+    
+    public Jeton recupererJeton(){
+        Jeton temp_jeton; 
+        temp_jeton = jetonCourant;
+        jetonCourant = null; 
+        return(temp_jeton);
         
     }
-    else{return("vide");}
+    
+    public void supprimerJeton(){
+        jetonCourant = null; 
     }
+    
+    public boolean presenceDesintegrateur(){
+        if(avoirDesintegrateur){
+          return(true);
+        } else{
+            return(false);
+        }
+    }
+    
+    public void placerDesintegrateur(){
+        avoirDesintegrateur = true;
+    }
+    
+    public void supprimerDesintegrateur(){
+        avoirDesintegrateur  = false;
+    }
+    
+    
 
 }
