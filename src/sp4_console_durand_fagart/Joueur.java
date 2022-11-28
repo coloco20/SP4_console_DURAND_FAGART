@@ -4,10 +4,48 @@
  */
 package sp4_console_durand_fagart;
 
+import java.util.*;
+
 /**
  *
  * @author 33768
  */
 public class Joueur {
-    public Joueur() {}
+
+    private String nom;
+    private String color;
+    private ArrayList<Jeton> reserveJetons = new ArrayList();
+    private int nombreDesintegrateur;
+
+    public Joueur(String nom_i) {
+        nom = nom_i;
+        nombreDesintegrateur = 0;
+    }
+
+    public void affecterCouleur() {
+        color = "Jaune";
+    }
+
+    public int nombreDeJeton() {
+        return (reserveJetons.size());
+
+    }
+    
+    public void ajouterJeton(Jeton j){
+        reserveJetons.add(j);
+    }
+    
+    public void joueJeton(){
+        reserveJetons.remove(reserveJetons.size());
+    }
+    
+    public void obtenirDesintegrateur(){
+        nombreDesintegrateur++;
+    }
+    
+    public void utiliserDesintegrateur(){
+        nombreDesintegrateur--;
+    }
+    
+    
 }
