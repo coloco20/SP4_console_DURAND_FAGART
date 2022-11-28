@@ -22,8 +22,13 @@ public class Joueur {
         nombreDesintegrateur = 0;
     }
 
-    public void affecterCouleur() {
-        color = "Jaune";
+    public void affecterCouleur(String col) {
+        if(col.equals("r")){
+            color = "rouge";
+        }if(col.equals("j")){
+            color = "Jaune";
+        }
+        
     }
 
     public int nombreDeJeton() {
