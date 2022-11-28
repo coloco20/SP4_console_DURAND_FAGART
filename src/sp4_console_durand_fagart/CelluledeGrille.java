@@ -95,19 +95,24 @@ public class CelluledeGrille {
         this.supprimerJeton();
         this.supprimerTrouNoir();
     }
-    
+
     @Override
-    public String toString(){
-        if(jetonCourant != null){
-            return("J");
+    public String toString() {
+        if (jetonCourant != null) {
+            if (jetonCourant.lireCouleur().equals("jaune")) {
+                return ("J");
+            }
+            if (jetonCourant.lireCouleur().equals("rouge")) {
+                return ("R");
+            }
         }
-        if(avoirTrouNoir){
-            return("@");
+        if (avoirTrouNoir) {
+            return ("@");
         }
-        if(avoirDesintegrateur){
-            return("D");
+        if (avoirDesintegrateur) {
+            return ("D");
         }
-        return("."); 
-    
+        return (".");
+
     }
 }
