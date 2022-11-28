@@ -35,5 +35,20 @@ public class Partie {
         }
     }
     
+    public void placerTrouNoirEtDesintegrateur(){
+        
+    }
+    
+    public void initialiserPartie(){
+           attribuerCouleurAuxJoueurs();
+           creeEtAffecterJeton(tab[0]);
+           creeEtAffecterJeton(tab[1]);
+           placerTrouNoirEtDesintegrateur();
+    }
+    
+    public void lancerPartie(){
+        
+    }
+    
         
 }
