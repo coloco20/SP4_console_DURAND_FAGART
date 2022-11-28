@@ -52,5 +52,8 @@ public class Joueur {
         nombreDesintegrateur--;
     }
     
+    public String lireCouleur(){
+        return(color);
+    }
     
 }
