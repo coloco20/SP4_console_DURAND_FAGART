@@ -16,6 +16,8 @@ public class CelluledeGrille {
 }
     public void CelluleDeGrille (){
     jetonCourant=null;
+    int a; 
+   
     }
     public boolean presenceJeton(){
         if(jetonCourant==null){
