@@ -14,6 +14,7 @@ public class SP4_console_DURAND_FAGART {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        /*
         Jeton jeton_jaune=new Jeton("jaune");//Création d'un jeton pour vérifier le code
         System.out.println(jeton_jaune.lireCouleur());
         System.out.println(jeton_jaune.toString());//verification du fonctionnement des méthodes
@@ -23,8 +24,15 @@ public class SP4_console_DURAND_FAGART {
         System.out.println(cellule1.recupererJeton());
         System.out.println(cellule1.presenceJeton());
         System.out.println(cellule1.presenceJeton());
+         */
+
+        Joueur j_1 = new Joueur("Colombe");
+        Joueur j_2 = new Joueur("Corentin");
+        Partie partie = new Partie(j_1, j_2);
+        partie.initialiserPartie();
+        partie.lancerPartie();
 // TODO code application logic here
-        
+
     }
-    
+
 }
