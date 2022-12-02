@@ -40,8 +40,11 @@ public class Joueur {
         reserveJetons.add(j);
     }
     
-    public void joueJeton(){
+    public Jeton joueJeton(){
+        int nb = reserveJetons.size();
+        Jeton j = reserveJetons.get(nb);
         reserveJetons.remove(reserveJetons.size());
+        return(j);
     }
     
     public void obtenirDesintegrateur(){
@@ -54,6 +57,10 @@ public class Joueur {
     
     public String lireCouleur(){
         return(color);
+    }
+    
+    public int nombreDesintegrateur(){
+        return(this.nombreDesintegrateur);
     }
     
 }
