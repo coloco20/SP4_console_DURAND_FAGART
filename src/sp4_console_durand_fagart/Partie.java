@@ -64,6 +64,7 @@ public class Partie {
     }
 
     public void initialiserPartie() {
+        plateau.viderGrille();
         attribuerCouleurAuxJoueurs();
         creeEtAffecterJeton(tab[0]);
         creeEtAffecterJeton(tab[1]);
