@@ -26,7 +26,7 @@ public class Joueur {
         if(col.equals("r")){
             color = "rouge";
         }if(col.equals("j")){
-            color = "Jaune";
+            color = "jaune";
         }
         
     }
@@ -42,8 +42,8 @@ public class Joueur {
     
     public Jeton joueJeton(){
         int nb = reserveJetons.size();
-        Jeton j = reserveJetons.get(nb);
-        reserveJetons.remove(reserveJetons.size());
+        Jeton j = reserveJetons.get(nb - 1);
+        reserveJetons.remove(reserveJetons.size() - 1);
         return(j);
     }
     
@@ -61,6 +61,10 @@ public class Joueur {
     
     public int nombreDesintegrateur(){
         return(this.nombreDesintegrateur);
+    }
+    
+    public String obtenirNom(){
+        return(this.nom);
     }
     
 }

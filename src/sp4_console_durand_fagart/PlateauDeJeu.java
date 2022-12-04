@@ -13,29 +13,27 @@ public class PlateauDeJeu {
     private CelluledeGrille[][] grille = new CelluledeGrille[6][7];
 
     public PlateauDeJeu() {
-        for (int i = 0; i < 7; i++) {
-            for (int j = 0; j < 8; j++) {
+        for (int i = 0; i < 6; i++) {
+            for (int j = 0; j < 7; j++) {
                 grille[i][j] = new CelluledeGrille(null);
             }
         }
 
     }
 
-    public int ajouterJetonDansColonne(Jeton jeton_param, int indice) {
-        for (int i = 0; i < 7; i++) {
-            if (grille[i][indice] == new CelluledeGrille(null)) {
-                grille[i][indice] = new CelluledeGrille(jeton_param);
-                return (i);
+    public void ajouterJetonDansColonne(Jeton jeton_param, int indice) {
+        for (int i = 5; i > 0; i--) {
+            if (!grille[i][indice].presenceJeton()) {
+                grille[i][indice].affecterJeton(jeton_param);
+                break;
             }
         }
-        return (10);
-
     }
 
     public boolean grilleRemplie() {
-        for (int i = 0; i < 7; i++) {
-            for (int j = 0; j < 8; j++) {
-                if (grille[i][j] == new CelluledeGrille(null)) {
+        for (int i = 0; i < 6; i++) {
+            for (int j = 0; j < 7; j++) {
+                if (!grille[i][j].presenceJeton()) {
                     return (false);
                 }
             }
@@ -55,7 +53,7 @@ public class PlateauDeJeu {
     }
 
     public boolean ligneGagnantePourCouleur(String couleur_gagnante) {
-        for (int i = 0; i < 6; i++) {
+        for (int i = 0; i < 6; i++) {//i ligne, j colone
             for (int j = 0; j < 4; j++) {
                 if (grille[i][j].lireCouleurDuJeton().equals(couleur_gagnante) & grille[i][j + 1].lireCouleurDuJeton().equals(couleur_gagnante) & grille[i][j + 2].lireCouleurDuJeton().equals(couleur_gagnante) & grille[i][j + 3].lireCouleurDuJeton().equals(couleur_gagnante)) {
                     return (true);
@@ -67,9 +65,9 @@ public class PlateauDeJeu {
     }
 
     public boolean colonneGagnantePourCouleur(String couleur_gagnante) {
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < 3; i++) {//i ligne, j colone
             for (int j = 0; j < 7; j++) {
-                if (grille[i][j].lireCouleurDuJeton().equals(couleur_gagnante) & grille[i][j + 1].lireCouleurDuJeton().equals(couleur_gagnante) & grille[i][j + 2].lireCouleurDuJeton().equals(couleur_gagnante) & grille[i][j + 3].lireCouleurDuJeton().equals(couleur_gagnante)) {
+                if (grille[i][j].lireCouleurDuJeton().equals(couleur_gagnante) & grille[i + 1][j].lireCouleurDuJeton().equals(couleur_gagnante) & grille[i + 2][j].lireCouleurDuJeton().equals(couleur_gagnante) & grille[i + 3][j].lireCouleurDuJeton().equals(couleur_gagnante)) {
                     return (true);
                 }
             }
@@ -89,6 +87,25 @@ public class PlateauDeJeu {
                 }
             }
 
+        }
+        return (false);
+    }
+
+    public boolean diagonaleDescendanteGagnantePourCouleur(String couleur_gagnante) {
+        for (int i = 3; i < 6; i++) {
+            for (int j = 0; j < 4; j++) {
+                if (grille[i][j].lireCouleurDuJeton().equals(couleur_gagnante) & grille[i - 1][j + 1].lireCouleurDuJeton().equals(couleur_gagnante) & grille[i - 2][j + 2].lireCouleurDuJeton().equals(couleur_gagnante) & grille[i - 3][j + 3].lireCouleurDuJeton().equals(couleur_gagnante)) {
+                    return (true);
+                }
+            }
+
+        }
+        return (false);
+    }
+
+    public boolean etreGagnantePourCouleur(String couleur_gagnante) {
+        if (diagonaleDescendanteGagnantePourCouleur(couleur_gagnante) == true | diagonaleMontanteGagnantePourCouleur(couleur_gagnante) == true | colonneGagnantePourCouleur(couleur_gagnante) == true | ligneGagnantePourCouleur(couleur_gagnante) == true) {
+            return (true);
         }
         return (false);
     }
@@ -143,5 +160,28 @@ public class PlateauDeJeu {
     public String lireJeton(int x, int y) {
         return (grille[x][y].lireCouleurDuJeton());
     }
+    
+    public void afficherGrilleSurConsole(){
+        String afficher_ligne = "";
+        for(int i = 0; i < 6; i++){//i represente les ligne
+            afficher_ligne = "";
+            for(int j = 0; j < 7; j++){//j represente les colonne
+                afficher_ligne += "[" + grille[i][j].toString() + "]";
+            }
+            System.out.println(afficher_ligne);
+        }
+    }
+    
+    public void afficherGrille(){
+        String afficher_ligne = "";
+        for(int i = 0; i < 6; i++){//i represente les ligne
+            afficher_ligne = "";
+            for(int j = 0; j < 7; j++){//j represente les colonne
+                afficher_ligne += "[" + i + "," + j + "]";
+            }
+            System.out.println(afficher_ligne);
+        }
+    }
+
 
 }
