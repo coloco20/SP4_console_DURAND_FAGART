@@ -39,7 +39,7 @@ public class CelluledeGrille {
             }
 
         } else {
-            return ("vide");
+            return ("n");
         }
     }
 
