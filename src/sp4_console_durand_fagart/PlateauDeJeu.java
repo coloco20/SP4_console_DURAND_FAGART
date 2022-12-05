@@ -113,14 +113,15 @@ public class PlateauDeJeu {
     public void tasserColonne(int col) {
         int nb_ligne = 0;
         for (int i = 0; i < 8; i++) {
-            if (grille[i][col] == null) {
+            if (!grille[i][col].presenceJeton()) {
                 nb_ligne = i;
                 break;
             }
         }
         for (int i = nb_ligne; i < 8; i++) {
-            if (grille[i][col] != null) {
-                grille[i - 1][col] = grille[i][col];
+            if (grille[i][col].presenceJeton()) {
+                Jeton j = grille[i][col].recupererJeton();
+                grille[i - 1][col].affecterJeton(j);
             }
         }
     }
@@ -186,7 +187,9 @@ public class PlateauDeJeu {
     public void viderGrille(){
         for(int i = 0; i < 6; i++){
             for(int j = 0; j < 7; j++){
-                grille[i][j] = null;
+                grille[i][j].supprimerJeton();
+                grille[i][j].supprimerDesintegrateur();
+                grille[i][j].supprimerTrouNoir();
             }
         }
     }
